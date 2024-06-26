@@ -1,14 +1,10 @@
 import os
 from vcf import Vcf, all_vcf_df, g0_vcf_df, g1_vcf_df
 import table
+from snarl import *
 
-vcf1 = Vcf()
-vcf1.make_table("/home/yboulkaid/Documents/sample_data/pgtest.data/calls/samp_g0_0.vcf")
+vcf1 = make_vcf_df(my_path + all_vcf[0])
+all_df = make_snarl_df(all_vcf_df)
+#g0_df  = make_snarl_df(g0_vcf_df)
+#g1_df  = make_snarl_df(g1_vcf_df)
 
-chemins_possibles1, chemins_pris1, chemins_combines1 = vcf1.chemins()
-print('========== possibles ==========')
-print(chemins_possibles1[0:5])
-print('============ pris =============')
-print(chemins_pris1[0:5])
-print('========== combinés ===========')
-print(chemins_combines1[0:5])
